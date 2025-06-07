@@ -39,7 +39,7 @@ module.exports = defineUserConfig({
         }],
         ['@vuepress/plugin-shiki', {
             theme: 'github-light',
-            langs: ['javascript', 'typescript', 'html', 'css', 'bash', 'json']
+            langs: ['javascript', 'typescript', 'html', 'css', 'bash', 'json',"cpp","java","md"]
         }],
         ['@vuepress/plugin-copy-code', {
             showInMobile: true,
