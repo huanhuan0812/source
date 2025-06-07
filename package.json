@@ -1,0 +1,20 @@
+{
+  "name": "knowledge-base",
+  "version": "1.0.0",
+  "description": "Personal knowledge base",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-copy-code": "^1.8.2",
+    "@vuepress/plugin-medium-zoom": "^1.8.2",
+    "@vuepress/plugin-search": "^1.8.2",
+    "@vuepress/plugin-prismjs": "^1.8.2",
+    "markdown-it-emoji": "^2.0.0",
+    "markdown-it-footnote": "^3.0.2",
+    "markdown-it-task-lists": "^2.1.1",
+    "vuepress": "^1.8.2"
+  }
+}
