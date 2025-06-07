@@ -37,4 +37,4 @@ jobs:
           publish_branch: main
           user_name: 'github-actions[bot]'
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
