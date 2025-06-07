@@ -29,10 +29,10 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
           external_repository: huanhuan0812/huanhuan0812.github.io
           publish_dir: ./docs/.vuepress/dist
           destination_dir: source
           keep_files: false
           force_orphan: true
           user_name: 'github-actions[bot]'
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
