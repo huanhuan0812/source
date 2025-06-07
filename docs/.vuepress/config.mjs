@@ -1,17 +1,22 @@
-const { defineUserConfig } = require('vuepress')
-const sidebar = require('./utils/autoSidebar')
+import { defineUserConfig } from 'vuepress'
+import { defaultTheme } from '@vuepress/theme-default'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { autoGenerateSidebar } from './utils/autoSidebar.mjs'
 
-module.exports = defineUserConfig({
+// 生成侧边栏
+const sidebar = autoGenerateSidebar()
+
+export default defineUserConfig({
+    // 基础配置
     base: '/source/',
-    title: '自动目录知识库',
-    description: '自动检索所有子目录的 Markdown 文档',
+    title: 'my docs',
+    description: 'my documentation from deepseek and other places',
 
-    head: [
-        ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-        ['link', { rel: 'icon', href: '/favicon.ico' }]
-    ],
+    // 指定 bundler
+    bundler: viteBundler(),
 
-    themeConfig: {
+    // 指定主题
+    theme: defaultTheme({
         logo: 'https://vuejs.org/images/logo.png',
 
         navbar: [
@@ -22,13 +27,14 @@ module.exports = defineUserConfig({
             }))
         ],
 
-        sidebar,
+        sidebar: sidebar,
 
-        repo: 'https://github.com/huanhuan0812/vuepress-auto-docs',
+        repo: 'https://github.com/huanhuan0812/source',
         docsDir: 'docs',
         editLinkText: '帮助改进此页面'
-    },
+    }),
 
+    // 插件配置
     plugins: [
         ['@vuepress/plugin-search', {
             locales: {
@@ -39,7 +45,7 @@ module.exports = defineUserConfig({
         }],
         ['@vuepress/plugin-shiki', {
             theme: 'github-light',
-            langs: ['javascript', 'typescript', 'html', 'css', 'bash', 'json',"cpp","java","md"]
+            langs: ['javascript', 'typescript', 'html', 'css', 'bash', 'json', 'cpp', 'java', 'md']
         }],
         ['@vuepress/plugin-copy-code', {
             showInMobile: true,
@@ -47,9 +53,5 @@ module.exports = defineUserConfig({
         }]
     ],
 
-    markdown: {
-        code: {
-            lineNumbers: true
-        }
-    }
+    // 不再需要 markdown.code 配置
 })
