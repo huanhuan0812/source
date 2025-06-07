@@ -33,6 +33,8 @@ jobs:
           publish_dir: ./docs/.vuepress/dist
           destination_dir: source
           keep_files: false
-          force_orphan: true
+          force_orphan: false
+          publish_branch: master
           user_name: 'github-actions[bot]'
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
