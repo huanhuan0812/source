@@ -59,7 +59,9 @@ ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
 ## 4.添加纹理和模型
 >要给你的物品纹理和模型，先简单地为物品创建一个16x16的纹理图像，并存储在 assets/mod-id/textures/item 文件夹中。 根据物品的 id 命名纹理文件的名字，但要有 .png 扩展名。
 
-![first_item.png](./first_item.png)
+<img src="first_item.png" width="128" height="128">
+
+[下载](./first_item.png)
 
 再创建”assets/docs/item/generated“,然后不需要做任何操作
 <br><br>

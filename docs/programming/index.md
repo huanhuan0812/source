@@ -1,4 +1,2 @@
 ## 现有内容:
-- java
-  - mod
-    - item
+- [java](./java/index.html)

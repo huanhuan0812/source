@@ -1,0 +1,3 @@
+import comp from "D:/github/source/docs/.vuepress/.temp/pages/programming/java/mod/item/firstitem.html.vue"
+const data = JSON.parse("{\"path\":\"/programming/java/mod/item/firstitem.html\",\"title\":\"创建第一个物品\",\"lang\":\"en-US\",\"frontmatter\":{},\"git\":{\"updatedTime\":1749288836000,\"contributors\":[{\"name\":\"huanhuan0812\",\"username\":\"huanhuan0812\",\"email\":\"qdhuanhuan08@outlook.com\",\"commits\":1,\"url\":\"https://github.com/huanhuan0812\"}],\"changelog\":[{\"hash\":\"ef4f9f1832070924520c7009eefbd82e8cca5f23\",\"time\":1749288836000,\"email\":\"qdhuanhuan08@outlook.com\",\"author\":\"huanhuan0812\",\"message\":\"1\"}]},\"filePathRelative\":\"programming/java/mod/item/firstitem.md\"}")
+export { comp, data }
