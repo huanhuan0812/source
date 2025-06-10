@@ -22,8 +22,8 @@ function getSidebarItems(dir, base = '') {
             .filter(item => !item.startsWith('.')) // 过滤隐藏文件
             .sort((a, b) => {
                 // 让 README.md 排在第一位
-                if (a === 'README.md') return -1
-                if (b === 'README.md') return 1
+                if (a === 'index.md' || a === 'README.md') return -1
+                if (b === 'index.md' || b === 'README.md') return 1
                 return a.localeCompare(b)
             })
     } catch (err) {
@@ -38,8 +38,9 @@ function getSidebarItems(dir, base = '') {
             const routePath = path.posix.join(base, item.replace(/\.md$/, ''))
 
             if (stat.isDirectory()) {
+                const indexPath = path.join(itemPath, 'index.md')
                 const readmePath = path.join(itemPath, 'README.md')
-                if (fs.existsSync(readmePath)) {
+                if (fs.existsSync(indexPath) || fs.existsSync(readmePath)) {
                     items.push({
                         text: capitalize(item),
                         link: `${routePath}/`,
@@ -47,7 +48,7 @@ function getSidebarItems(dir, base = '') {
                         children: getSidebarItems(`${dir}/${item}`, `${base}/${item}`)
                     })
                 }
-            } else if (item.endsWith('.md') && item !== 'README.md') {
+            } else if (item.endsWith('.md') && item !== 'index.md' && item !== 'README.md') {
                 items.push({
                     text: capitalize(item.replace(/\.md$/, '').replace(/-/g, ' ')),
                     link: routePath
