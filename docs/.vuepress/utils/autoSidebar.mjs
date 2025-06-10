@@ -71,6 +71,7 @@ export function autoGenerateSidebar() {
             try {
                 const itemPath = path.join(rootDir, item)
                 if (fs.statSync(itemPath).isDirectory() && item !== '.vuepress') {
+                    const sidebarItems = getSidebarItems(item);
                     sidebar[`/${item}/`] = getSidebarItems(item)
                 }
             } catch (err) {
