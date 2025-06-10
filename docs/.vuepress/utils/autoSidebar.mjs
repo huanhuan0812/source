@@ -72,7 +72,7 @@ export function autoGenerateSidebar() {
                 const itemPath = path.join(rootDir, item)
                 if (fs.statSync(itemPath).isDirectory() && item !== '.vuepress') {
                     const sidebarItems = getSidebarItems(item);
-                    sidebar[`/${item}/`] = getSidebarItems(item)
+                    sidebar[`/${item}/`] = sidebarItems;
                 }
             } catch (err) {
                 console.error(`Error processing directory item ${item}:`, err)
