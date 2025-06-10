@@ -21,7 +21,8 @@ export default defineUserConfig({
 
         navbar: [
             { text: '首页', link: '/' },
-            ...Object.keys(sidebar).map(path => ({
+            ...Object.keys(sidebar).filter(path => !path.includes('/image/'))
+                .map(path => ({
                 text: path.split('/')[1].charAt(0).toUpperCase() + path.split('/')[1].slice(1),
                 link: path
             }))
