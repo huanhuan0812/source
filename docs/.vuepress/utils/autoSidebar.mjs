@@ -21,7 +21,7 @@ function getSidebarItems(dir, base = '') {
         files = fs.readdirSync(fullPath)
             .filter(item => !item.startsWith('.')) // 过滤隐藏文件
             .sort((a, b) => {
-                // 让 README.md 排在第一位
+                // 让 README.md 和 index.md 排在第一位
                 if (a === 'index.md' || a === 'README.md') return -1
                 if (b === 'index.md' || b === 'README.md') return 1
                 return a.localeCompare(b)
@@ -45,7 +45,11 @@ function getSidebarItems(dir, base = '') {
                         text: capitalize(item),
                         link: `${routePath}/`,
                         collapsible: true,
-                        children: getSidebarItems(`${dir}/${item}`, `${base}/${item}`)
+                        // 关键修改：使用 path.join 处理物理路径，path.posix.join 处理路由路径
+                        children: getSidebarItems(
+                            path.join(dir, item),
+                            path.posix.join(base, item)
+                        )
                     })
                 }
             } else if (item.endsWith('.md') && item !== 'index.md' && item !== 'README.md') {
@@ -71,8 +75,8 @@ export function autoGenerateSidebar() {
             try {
                 const itemPath = path.join(rootDir, item)
                 if (fs.statSync(itemPath).isDirectory() && item !== '.vuepress') {
-                    const sidebarItems = getSidebarItems(item);
-                    sidebar[`/${item}/`] = sidebarItems;
+                    // 确保侧边栏键包含完整路径
+                    sidebar[`/${item}/`] = getSidebarItems(item);
                 }
             } catch (err) {
                 console.error(`Error processing directory item ${item}:`, err)
