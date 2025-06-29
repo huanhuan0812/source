@@ -29,11 +29,24 @@ jobs:
       - name: copy image
         run: cp -r docs/source/image/ docs/.vuepress/dist/source/
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages Assets
         uses: peaceiris/actions-gh-pages@v3
         with:
           external_repository: huanhuan0812/huanhuan0812.github.io
-          publish_dir: ./docs/.vuepress/dist
+          publish_dir: ./docs/.vuepress/dist/source
+          destination_dir: source
+          keep_files: false
+          force_orphan: false
+          publish_branch: main
+          user_name: 'github-actions[bot]'
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
+
+      - name: Deploy to GitHub Pages Souece
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          external_repository: huanhuan0812/huanhuan0812.github.io
+          publish_dir: ./docs/.vuepress/dist/assets
           destination_dir: ""
           keep_files: true
           force_orphan: false
