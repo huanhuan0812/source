@@ -55,7 +55,7 @@ jobs:
         with:
           external_repository: huanhuan0812/huanhuan0812.github.io
           publish_dir: ./docs/.vuepress/dist/assets
-          destination_dir: ""
+          destination_dir: assets
           keep_files: true
           force_orphan: false
           publish_branch: main
