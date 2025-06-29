@@ -8,7 +8,7 @@ const sidebar = autoGenerateSidebar()
 
 export default defineUserConfig({
     // 基础配置
-    base: '/source/',
+    base: '/',
     title: 'my docs',
     description: 'my documentation from deepseek and other places',
 
@@ -20,12 +20,12 @@ export default defineUserConfig({
         logo: 'https://vuejs.org/images/logo.png',
 
         navbar: [
-            { text: '首页', link: '/' },
-            ...Object.keys(sidebar).filter(path => !path.includes('/image/'))
+            { text: '首页', link: '/source/' },
+            ...Object.keys(sidebar).filter(path => !path.includes('/image/')&&!path.includes('/source/'))
                 .map(path => ({
-                text: path.split('/')[1].charAt(0).toUpperCase() + path.split('/')[1].slice(1),
-                link: path
-            }))
+                    text: path.split('/')[1].charAt(0).toUpperCase() + path.split('/')[1].slice(1),
+                    link: path
+                }))
         ],
 
         sidebar: sidebar,

@@ -34,8 +34,8 @@ jobs:
         with:
           external_repository: huanhuan0812/huanhuan0812.github.io
           publish_dir: ./docs/.vuepress/dist
-          destination_dir: source
-          keep_files: false
+          destination_dir: ""
+          keep_files: true
           force_orphan: false
           publish_branch: main
           user_name: 'github-actions[bot]'

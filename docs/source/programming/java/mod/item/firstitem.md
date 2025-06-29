@@ -1,3 +1,8 @@
+---
+order: 2
+title: "第一个物品"
+---
+
 **！总结自**[fabric wiki:item](https://wiki.fabricmc.net/zh_cn:tutorial:items)和[fabric文档](https://docs.fabricmc.net/zh_cn/1.21/develop/items/first-item)
 # 创建第一个物品
 ## 1.注册物品
