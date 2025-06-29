@@ -42,6 +42,11 @@ jobs:
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
           deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
 
+      - name: Kill existing SSH agent
+        run: |
+          pkill -f "ssh-agent -a /tmp/ssh-auth.sock" || true
+          rm -f /tmp/ssh-auth.sock
+
       - name: Wait 5s to avoid SSH conflict
         run: sleep 10
 
