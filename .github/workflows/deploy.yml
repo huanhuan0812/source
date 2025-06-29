@@ -27,7 +27,7 @@ jobs:
         run: npm run docs:build
 
       - name: copy image
-        run: cp -r docs/image/ docs/.vuepress/dist/
+        run: cp -r docs/source/image/ docs/.vuepress/dist/source/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
