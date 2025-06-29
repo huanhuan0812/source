@@ -2,7 +2,7 @@
 title: "markdown基础"  # 显示在侧边栏的文本
 order: 2            # 排序位置
 ---
-
+~~复制自deepseek:)~~
 # Markdown 语法大全（基础+扩展）
 
 Markdown 是一种轻量级标记语言，以下是其完整语法指南，包括基础语法和常见扩展功能。

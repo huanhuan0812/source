@@ -2,7 +2,7 @@
 title: "markdown尖括号"  # 显示在侧边栏的文本
 order: 3            # 排序位置
 ---
-
+~~复制自deepseek:)~~
 # Markdown 尖括号语法
 
 尖括号 (`< >`) 在 Markdown 中有多种用途，以下是详细的语法说明：
