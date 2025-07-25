@@ -1,6 +1,6 @@
 ---
 title: "变量"
-order: 2
+order: 3
 ---
 # Java 数组详解
 
