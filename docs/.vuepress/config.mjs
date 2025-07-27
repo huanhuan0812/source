@@ -20,6 +20,7 @@ export default defineUserConfig({
         logo: 'https://vuejs.org/images/logo.png',
 
         navbar: [
+            { text: '回到主页', link: 'https://huanhuan0812.github.io/' },
             { text: '首页', link: '/source/' },
             ...Object.keys(sidebar).filter(path => !path.includes('/image/')&&!path.includes('/source/'))
                 .map(path => ({
