@@ -1,6 +1,6 @@
 ---
 title: "CSS"    # 显示在侧边栏的文本
-order: 1            # 排序位置
+order: 2            # 排序位置
 collapsed: false     # 默认不折叠
 ---
 # CSS 编写指南

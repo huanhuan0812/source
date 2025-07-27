@@ -1,6 +1,6 @@
 ---
 title: "java"
-order: 1
+order: 2
 ---
 # Java 编程
 - [mod](./mod/)
