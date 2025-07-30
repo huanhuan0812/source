@@ -17,7 +17,7 @@ export default defineUserConfig({
 
     // 指定主题
     theme: defaultTheme({
-        logo: 'ic-public-folder.png',
+        logo: 'ic_public_folder.png',
 
         navbar: [
             { text: '回到主页', link: 'https://huanhuan0812.github.io/' },
