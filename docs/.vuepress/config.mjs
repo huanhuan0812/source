@@ -17,7 +17,7 @@ export default defineUserConfig({
 
     // 指定主题
     theme: defaultTheme({
-        logo: 'https://vuejs.org/images/logo.png',
+        logo: 'ic-public-folder.png',
 
         navbar: [
             { text: '回到主页', link: 'https://huanhuan0812.github.io/' },
