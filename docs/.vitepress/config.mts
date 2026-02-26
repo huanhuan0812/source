@@ -366,7 +366,7 @@ const searchOptions = {
 
 export default defineConfig({
   base: '/source/',
-  title: 'API 文档',
+  title: '知识库',
   
   // 添加搜索插件
   vite: {
