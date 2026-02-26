@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -26,36 +26,12 @@ jobs:
       - name: Build docs
         run: npm run docs:build
 
-      - name: copy image
-        run: cp -r docs/source/image/ docs/.vuepress/dist/source/
-
       - name: Deploy to GitHub Pages Assets
         uses: peaceiris/actions-gh-pages@v3
         with:
           external_repository: huanhuan0812/huanhuan0812.github.io
-          publish_dir: ./docs/.vuepress/dist/source
+          publish_dir: ./docs/.vitepress/dist/
           destination_dir: source
-          keep_files: false
-          force_orphan: false
-          publish_branch: main
-          user_name: 'github-actions[bot]'
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-
-      - name: Kill existing SSH agent
-        run: |
-          pkill -f "ssh-agent -a /tmp/ssh-auth.sock" || true
-          rm -f /tmp/ssh-auth.sock
-
-      - name: Wait 5s to avoid SSH conflict
-        run: sleep 10
-
-      - name: Deploy to GitHub Pages Souece
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          external_repository: huanhuan0812/huanhuan0812.github.io
-          publish_dir: ./docs/.vuepress/dist/assets
-          destination_dir: assets
           keep_files: false
           force_orphan: false
           publish_branch: main
