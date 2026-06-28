@@ -5,7 +5,8 @@
     "path": "^0.12.7",
     "gray-matter": "4.0.3",
     "@types/node": "^25.3.0",
-    "vitepress-plugin-search": "^1.0.4-alpha.22"
+    "vitepress-plugin-search": "^1.0.4-alpha.22",
+    "markdown-it-math": "^6.0.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",

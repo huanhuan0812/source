@@ -5,6 +5,7 @@ import path, { posix } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import matter from 'gray-matter'
 import { SearchPlugin } from 'vitepress-plugin-search'
+import MarkdownItMath from 'markdown-it-math' // 改用 markdown-it-math
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(__dirname, '..') // 项目根目录
@@ -358,8 +359,8 @@ const searchOptions = {
   tokenize: 'full', // 分词方式：'full' 或 'forward'
   cache: true, // 是否缓存搜索结果
   respect: 'title', // 尊重标题
-  encode: false, // 是否编码
   weight: 100, // 权重
+  encode: false, // 是否编码
   encodeSpecialChars: true, // 是否编码特殊字符
   encodeSpecialCharsPattern: /[\x00-\x1F\x7F\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFEFF\uFFFC]/g
 }
@@ -391,6 +392,15 @@ export default defineConfig({
     theme: {
       light: 'github-light',
       dark: 'github-dark'
+    },
+    // 使用 markdown-it-math 支持 LaTeX
+    config: (md) => {
+      md.use(MarkdownItMath, {
+        inlineOpen: '$',
+        inlineClose: '$',
+        blockOpen: '$$',
+        blockClose: '$$'
+      })
     }
   }
 })

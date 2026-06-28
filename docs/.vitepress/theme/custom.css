@@ -1,0 +1,38 @@
+/* .vitepress/theme/custom.css */
+
+/* 块级公式左对齐 */
+.vp-doc div[class*="language-"] {
+  /* 保持代码块样式 */
+}
+
+/* MathJax/KaTeX 块级公式左对齐 */
+.vp-doc .math-block {
+  text-align: left !important;
+}
+
+/* 或者针对所有公式容器 */
+.vp-doc .math-display {
+  text-align: left !important;
+}
+
+/* 如果使用 KaTeX */
+.vp-doc .katex-display {
+  text-align: left !important;
+  margin: 1em 0;
+}
+
+/* 如果使用 MathJax */
+.vp-doc .MathJax_Display {
+  text-align: left !important;
+  margin: 1em 0;
+}
+
+/* 公式编号右对齐（如果需要） */
+.vp-doc .katex-display > .katex {
+  display: inline-block;
+  text-align: left;
+}
+
+.vp-doc .katex-display > .katex .tag {
+  float: right;
+}
